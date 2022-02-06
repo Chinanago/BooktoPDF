@@ -2,26 +2,43 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <script src="script.js"></script>
-    <style src="style.css"></style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <div>
-        <label for="file_upload">
-            <input id="file_upload" type="file" accept="video/*"/>
-        </label>
-    </div>
-    <div>
-        <video controls autoplay width="600" height="400"></video>
-    </div>
-        <div>
-            <button id="capture">capture</button>
-            <button id="remove">remove</button>
-            <button id="download">download</button>
+    <div class="popup" id="js-popup">
+        <div class="popup-inner">
+            <div id="upFileWrap">
+                <div id="inputFile">
+                    <!-- ドラッグ&ドロップエリア -->
+                    <p id="dropArea"><b>ここにファイルをドロップしてください<br>または</p></b>
+            
+                    <!-- 通常のinput[type=file] -->
+                    <div id="inputFileWrap">
+                        <input id="file_upload" type="file" accept="video/*"/>
+                        <div id="btnInputFile"><span>ファイルを選択する</span></div>
+                        <div id="btnChangeFile"><span>ファイルを変更する</span></div>
+                    </div>
+                </div>
+            </div>            
         </div>
-        <br>
-        <br>
-    <div id="galary"></div>
+        <div class="black-background" id="js-black-bg"></div>
+    </div>
+    <div class="container">
+        <h1 class="header">BookMovie2PDF</h1>
+        <div class="main">
+            <div id="videocap">
+                <video controls autoplay></video>
+                <div>
+                    <button id="capture">capture</button>
+                    <button id="remove">remove</button>
+                    <button id="download">download</button>
+                </div>
+            </div>
+        </div>
+        <div class="gallery"></div>
+    </div>
 </body>
 
 </html>

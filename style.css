@@ -1,0 +1,158 @@
+.thumbnail{
+    border:white solid 3px;
+}
+.thumbnail.selected{
+    border:#3d6cb9 solid 3px;
+    background-color: #3d6cb9;
+    border-radius: 3px;
+}
+.thumblock{
+    width: 66px;
+    height: 60px;
+    text-align: center;
+}
+.caption{
+    margin-top: -6px;
+}
+.container{
+    display: grid;
+    grid-template-rows: 15vh 60vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "video gallery";
+}
+.header {
+    grid-area: title;
+  }
+.upload{
+    grid-area: upload;
+}
+.main {
+    grid-area: video;
+}
+.gallery {
+    margin-left: 5px;
+    border: gray solid 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 6px; 
+    align-content: flex-start;
+    grid-area: gallery;
+    overflow: scroll;
+}
+video{
+    width: 100%;
+}
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .6s;
+  }
+  .popup.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .popup-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    max-width: 600px;
+    padding: 5%;
+    background-color: #fff;
+    z-index: 2;
+  }
+  .black-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    z-index: 1;
+    cursor: pointer;
+  }
+  #inputFile {
+    position: relative;
+    padding: 180px 0 100px;
+    text-align: center;
+}
+
+#dropArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*padding: 100px 0 0;*/
+    border: 2px dashed #494949;
+    background: rgba(22, 165, 191, 0);
+    transition: all 0.25s cubic-bezier(0.21, 0.51, 0.51, 1);
+}
+
+#dropArea.dragover {
+    border: 2px solid #16a5bf;
+    background: rgba(22, 165, 191, 0.6);
+}
+
+#file_upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    width: 30vh;
+    height: 4vw;
+    opacity: 0;
+}
+
+#inputFileWrap {
+    position: relative;
+    display: inline-block;
+}
+
+#btnInputFile,
+#btnChangeFile {
+    display: table;
+    width: 30vh;
+}
+
+#btnChangeFile {
+    display: none;
+}
+
+
+#btnInputFile span,
+#btnChangeFile span {
+    position: relative;
+    z-index: 2;
+    display: table-cell;
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+    font-size: 100%;
+    line-height: 1;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#upFileWrap.selected #btnInputFile {
+    display: none;
+}
+
+#upFileWrap.selected #btnChangeFile {
+    display: table;
+}
